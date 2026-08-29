@@ -47,8 +47,30 @@ public class Account{
         return this.accountID + "|" + this.accountName + "|" + this.balance;
     }
 
+    /*
     // week 2
     public void withdraw(double amount){
+        System.out.println("Withdrawing from Account class!");
+    }
+    */
+
+    // week 6
+    public void withdraw(double amount){
+        if(this.getBalance() <amount)
+            return;
+
+        this.balance = this.balance - amount;
+
+    }
+
+    //week 6
+    public void addInterest(double rate) throws IllegalArgumentException{
+        if(rate <= 0){
+            throw new IllegalArgumentException();
+        }
+        else{
+            this.balance += this.balance * rate;
+        }
     }
 
     // week 2
